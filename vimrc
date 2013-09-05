@@ -33,7 +33,7 @@ map <F5> <c-w><c-w>
 map <c-w><c-t> :WMToggle<cr>
 map <F12> \be
 map <space> :noh<cr>
-map <C-c> :Bclose<cr>
+map <C-c> :Kwbd<cr>
 
 :noremap <C-left> :bprev<CR>
 :noremap <C-right> :bnext<CR>

@@ -29,17 +29,19 @@ syntax on
 set foldmethod=indent
 
 " http://www.make-believe.org/in-words/post/vim-is-forever/
-map <F5> <c-w><c-w>
-map <c-w><c-t> :WMToggle<cr>
+map <F5> <C-w><C-w>
+map <C-w><C-t> :WMToggle<CR>
 map <F12> \be
-map <space> :noh<cr>
-map <C-c> :Kwbd<cr>
+map <C-c> :Kwbd<CR>
 
 :noremap <C-left> :bprev<CR>
 :noremap <C-right> :bnext<CR>
 
 " Cleanup extra spacing
 map <BackSpace><BackSpace> :mark I<cr>:%s/\ *$//<cr>:noh<cr>:'I<cr>
+
+" Cleanup search highlights
+nnoremap <Space> :noh <CR><CR>
 
 filetype on            " enables filetype detection
 filetype plugin on     " enables filetype specific plugins
@@ -85,12 +87,11 @@ let g:airline_right_sep = '◀'
 let g:airline_linecolumn_prefix = '␊ '
 let g:airline_linecolumn_prefix = '␤ '
 let g:airline_linecolumn_prefix = '¶ '
-let g:airline_fugitive_prefix = '⎇ '
+let g:airline_branch_prefix = '⎇ '
 let g:airline_paste_symbol = 'ρ'
 let g:airline_paste_symbol = 'Þ'
 let g:airline_paste_symbol = '∥'
 let g:airline_section_c = '%{getcwd()}/%t'
-
 
 " Supertab settings
 " supertab + eclim == java win
@@ -99,3 +100,4 @@ let g:SuperTabDefaultCompletionTypeDiscovery = [
             \ "&omnifunc:<c-x><c-o>",
             \ ]
 let g:SuperTabLongestHighlight = 1
+

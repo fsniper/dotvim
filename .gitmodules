@@ -24,4 +24,4 @@
 	url = https://github.com/tpope/vim-fugitive.git
 [submodule "vim/bundle/vim-twig"]
 	path = vim/bundle/vim-twig
-    url= https://github.com/evidens/vim-twig.git
+	url = https://github.com/evidens/vim-twig.git

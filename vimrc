@@ -36,8 +36,8 @@ map <C-w><C-t> :WMToggle<CR>
 map <F12> \be
 map <C-c> :Kwbd<CR>
 
-:noremap <C-left> :bprev<CR>
-:noremap <C-right> :bnext<CR>
+:noremap <C-left> :tabnext<CR>
+:noremap <C-right> :tabprev<CR>
 
 " Cleanup extra spacing
 map <BackSpace><BackSpace> :mark I<cr>:%s/\ *$//<cr>:noh<cr>:'I<cr>
@@ -49,11 +49,13 @@ filetype on            " enables filetype detection
 filetype plugin on     " enables filetype specific plugins
 filetype indent on     " enables filetype indent detection
 
-autocmd VimEnter * NERDTreeTabsToggle
-autocmd VimEnter * wincmd p
+let g:nerdtree_tabs_open_on_console_startup = 1
+let NERDTreeMapOpenInTab='<ENTER>'
+let g:nerdtree_tabs_open_on_new_tab=1
 
 :let g:buftabs_only_basename=1
 :let NERDTreeIgnore=['\.pyc$', '\.rbc$', '\~$']
+autocmd VimEnter * wincmd p
 
 set laststatus=2
 :let g:buftabs_in_statusline=1
@@ -95,6 +97,7 @@ let g:airline_paste_symbol = 'Þ'
 let g:airline_paste_symbol = '∥'
 let g:airline_section_c = '%{getcwd()}/%t'
 
+
 " Supertab settings
 " supertab + eclim == java win
 let g:SuperTabDefaultCompletionTypeDiscovery = [
@@ -107,4 +110,5 @@ let g:indent_guides_auto_colors = 0
 autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=red   ctermbg=3
 autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=green ctermbg=4
 
+colorscheme default
 au VimEnter * IndentGuidesEnable

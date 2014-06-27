@@ -50,7 +50,6 @@ filetype plugin on     " enables filetype specific plugins
 filetype indent on     " enables filetype indent detection
 
 let g:nerdtree_tabs_open_on_console_startup = 1
-let NERDTreeMapOpenInTab='<ENTER>'
 let g:nerdtree_tabs_open_on_new_tab=1
 
 :let g:buftabs_only_basename=1

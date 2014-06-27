@@ -1,4 +1,6 @@
 execute pathogen#infect()
+let mapleader=","
+
 set nocompatible
 set tabstop=4
 set shiftwidth=4
@@ -101,3 +103,8 @@ let g:SuperTabDefaultCompletionTypeDiscovery = [
             \ ]
 let g:SuperTabLongestHighlight = 1
 
+let g:indent_guides_auto_colors = 0
+autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=red   ctermbg=3
+autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=green ctermbg=4
+
+au VimEnter * IndentGuidesEnable

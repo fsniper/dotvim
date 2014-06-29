@@ -25,7 +25,6 @@ map <tab><tab> :tabnext<CR>
 map <S-tab><S-tab> :tabprev<CR>
 
 set enc=utf-8
-set bg=dark
 syntax on
 
 set foldmethod=indent
@@ -105,9 +104,6 @@ let g:SuperTabDefaultCompletionTypeDiscovery = [
             \ ]
 let g:SuperTabLongestHighlight = 1
 
-let g:indent_guides_auto_colors = 0
-autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=red   ctermbg=3
-autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=green ctermbg=4
 
 colorscheme default
-au VimEnter * IndentGuidesEnable
+set bg=dark

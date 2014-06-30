@@ -106,4 +106,5 @@ let g:SuperTabLongestHighlight = 1
 
 
 colorscheme default
+let g:indentLine_color_term = 0
 set bg=dark

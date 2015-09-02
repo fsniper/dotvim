@@ -109,3 +109,6 @@ colorscheme default
 let g:indentLine_color_term = 0
 let g:indentLine_char = '┆'
 set bg=dark
+
+nnoremap <C-S-p> :CtrlPTag<CR>
+nmap <F8> :TagbarToggle<CR>

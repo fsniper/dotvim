@@ -43,3 +43,6 @@
 [submodule "vim/bundle/vim-gradle"]
 	path = vim/bundle/vim-gradle
 	url = https://github.com/tfnico/vim-gradle.git
+[submodule "vim/bundle/tagbar"]
+	path = vim/bundle/tagbar
+	url = git://github.com/majutsushi/tagbar

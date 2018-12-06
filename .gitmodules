@@ -1,48 +1,21 @@
-[submodule "vim/bundle/salt-vim"]
-	path = vim/bundle/salt-vim
-	url = https://github.com/saltstack/salt-vim.git
-[submodule "vim/bundle/nerdtree"]
-	path = vim/bundle/nerdtree
-	url = https://github.com/scrooloose/nerdtree.git
-[submodule "vim/bundle/vim-airline"]
-	path = vim/bundle/vim-airline
-	url = https://github.com/bling/vim-airline.git
-[submodule "vim/bundle/ctrlp.vim"]
-	path = vim/bundle/ctrlp.vim
-	url = https://github.com/kien/ctrlp.vim.git
-[submodule "vim/bundle/supertab"]
-	path = vim/bundle/supertab
-	url = https://github.com/ervandew/supertab.git
-[submodule "vim/bundle/conque-term"]
-	path = vim/bundle/conque-term
-	url = https://github.com/rosenfeld/conque-term
-[submodule "vim/bundle/vim-nerdtree-tabs"]
-	path = vim/bundle/vim-nerdtree-tabs
-	url = https://github.com/jistr/vim-nerdtree-tabs.git
-[submodule "vim/bundle/vim-fugitive"]
-	path = vim/bundle/vim-fugitive
-	url = https://github.com/tpope/vim-fugitive.git
-[submodule "vim/bundle/vim-twig"]
-	path = vim/bundle/vim-twig
-	url = https://github.com/evidens/vim-twig.git
-[submodule "vim/bundle/vim-indent-guides"]
-	path = vim/bundle/vim-indent-guides
-	url = git://github.com/nathanaelkane/vim-indent-guides.git
-[submodule "vim/bundle/gitv"]
-	path = vim/bundle/gitv
-	url = https://github.com/gregsexton/gitv
-[submodule "vim/bundle/indentLine"]
-	path = vim/bundle/indentLine
-	url = https://github.com/Yggdroot/indentLine
-[submodule "vim/bundle/vim-go"]
-	path = vim/bundle/vim-go
-	url = https://github.com/fatih/vim-go.git
-[submodule "vim/bundle/YouCompleteMe"]
-	path = vim/bundle/YouCompleteMe
+[submodule "vim/plugged/YCM-Generator"]
+	path = vim/plugged/YCM-Generator
+	url = https://github.com/rdnetto/YCM-Generator.git
+[submodule "vim/plugged/YouCompleteMe"]
+	path = vim/plugged/YouCompleteMe
 	url = https://github.com/Valloric/YouCompleteMe.git
-[submodule "vim/bundle/vim-gradle"]
-	path = vim/bundle/vim-gradle
-	url = https://github.com/tfnico/vim-gradle.git
-[submodule "vim/bundle/tagbar"]
-	path = vim/bundle/tagbar
-	url = git://github.com/majutsushi/tagbar
+[submodule "vim/plugged/gocode"]
+	path = vim/plugged/gocode
+	url = https://github.com/nsf/gocode.git
+[submodule "vim/plugged/nerdtree"]
+	path = vim/plugged/nerdtree
+	url = https://github.com/scrooloose/nerdtree.git
+[submodule "vim/plugged/vim-airline"]
+	path = vim/plugged/vim-airline
+	url = https://github.com/vim-airline/vim-airline.git
+[submodule "vim/plugged/vim-easy-align"]
+	path = vim/plugged/vim-easy-align
+	url = https://github.com/junegunn/vim-easy-align.git
+[submodule "vim/plugged/vim-go"]
+	path = vim/plugged/vim-go
+	url = https://github.com/fatih/vim-go.git

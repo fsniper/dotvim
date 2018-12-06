@@ -1,4 +1,37 @@
-execute pathogen#infect()
+call plug#begin()
+
+
+function! BuildYCM(info)
+  " info is a dictionary with 3 fields
+  " - name:   name of the plugin
+  " - status: 'installed', 'updated', or 'unchanged'
+  " - force:  set on PlugInstall! or PlugUpdate!
+  if a:info.status == 'installed' || a:info.force
+    !./install.py
+  endif
+endfunction
+
+" Make sure you use single quotes
+
+Plug 'junegunn/vim-easy-align'
+Plug 'scrooloose/nerdtree' 
+Plug 'rdnetto/YCM-Generator'
+Plug 'fatih/vim-go', { 'tag': '*' }
+Plug 'nsf/gocode', { 'tag': 'v.20150303', 'rtp': 'vim' }
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'Valloric/YouCompleteMe', { 'do': function('BuildYCM') }
+Plug 'vim-airline/vim-airline'
+
+" Initialize plugin system
+call plug#end()
+
+
+" Auto start nerdtree
+autocmd vimenter * NERDTree
+
+" Close vim if only remaining window is NerdTree
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+
 let mapleader=","
 
 set nocompatible
@@ -51,22 +84,6 @@ filetype on            " enables filetype detection
 filetype plugin on     " enables filetype specific plugins
 filetype indent on     " enables filetype indent detection
 
-let g:nerdtree_tabs_open_on_console_startup = 1
-let g:nerdtree_tabs_open_on_new_tab=1
-
-:let g:buftabs_only_basename=1
-:let NERDTreeIgnore=['\.pyc$', '\.rbc$', '\~$']
-autocmd VimEnter * wincmd p
-
-set laststatus=2
-:let g:buftabs_in_statusline=1
-:let g:buftabs_active_highlight_group="Visual"
-
-" NO auto comment insertion for any filetype
-autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
-
-map <C-o> :FufCoverageFile<CR>
-
 " highlight extra long lines
 " highlight extraspacing after end of line
 highlight OverLength ctermbg=grey ctermfg=black guibg=#592929
@@ -99,20 +116,18 @@ let g:airline_paste_symbol = '∥'
 let g:airline_section_c = '%{getcwd()}/%t'
 
 
-" Supertab settings
-" supertab + eclim == java win
-let g:SuperTabDefaultCompletionTypeDiscovery = [
-            \ "&completefunc:<c-x><c-u>",
-            \ "&omnifunc:<c-x><c-o>",
-            \ ]
-let g:SuperTabLongestHighlight = 1
-
-
-colorscheme default
-let g:indentLine_color_term = 0
-let g:indentLine_char = '┆'
 set bg=dark
+let NERDTreeIgnore=['\.pyc$', '\.rbc$', '\~$']
 
-nmap <F8> :TagbarToggle<CR>
-nnoremap Ü <C-]>
-nnoremap Ğ <C-O>
+" Focus to main text instead of NerdTree
+autocmd VimEnter * if &filetype !=# 'gitcommit' | NERDTree | wincmd p | endif
+
+
+" https://stackoverflow.com/questions/1675688/make-vim-show-all-white-spaces-as-a-character
+set listchars=eol:$,tab:>-,trail:~,extends:>,precedes:<,space:␣
+noremap <F4> :set list!<CR>
+inoremap <F4> <C-o>:set list!<CR>
+cnoremap <F4> <C-c>:set list!<CR>
+
+" gofmt won't cloae folds https://github.com/fatih/vim-go/issues/502 
+let g:go_fmt_experimental = 1
